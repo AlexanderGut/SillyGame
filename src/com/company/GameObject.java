@@ -1,6 +1,6 @@
 package com.company;
 
-public class GameObject {
+public abstract class GameObject {
     /*
     *  ID's
     *  Player 1 = 50
