@@ -7,18 +7,12 @@ public class Random {
         int num = 0;
         max += 1;
         num = (int)(Math.random() * (max));
-
         return num;
     }
-
     // Generar numero random desde min a max
     // revisar
-
-    public static int generarNumMinandMax(int min, int max){
-        int num = 0;
-
-        num = (int)(Math.random()*(max-min+1)+min);
-
+    public static int generarNum(int min, int max){
+        int num = (int)(Math.random()*(max-min+1)+min);
         return num;
     }
 
@@ -27,7 +21,6 @@ public class Random {
     public static  boolean generarBoolean(){
         int num;
         boolean bool;
-
         num = generarNum(1);
 
         if(num == 1){

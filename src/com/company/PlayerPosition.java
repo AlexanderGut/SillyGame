@@ -2,6 +2,7 @@ package com.company;
 
 public class PlayerPosition {
 
+    // eliminar clase
     private static int rowPosition;
     private static int columnPosition;
     private static boolean state = false;
