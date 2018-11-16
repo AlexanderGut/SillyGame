@@ -69,7 +69,16 @@ public class Move {
     }
 
     public static void randomMove(int[][] matrix, GameObject object ){
+        double opt = Math.random();
 
+        if(opt > 0 && opt < 0.25)
+            up(matrix, object);
+        else if(opt >= 0.25 && opt < 0.50)
+            down(matrix, object);
+        else if(opt >= 0.50 && opt < 0.75)
+            right(matrix, object);
+        else if(opt >= 0.75 && opt < 1)
+            left(matrix, object);
     }
 
     private static boolean checkUp(int[][] mt, GameObject object){
