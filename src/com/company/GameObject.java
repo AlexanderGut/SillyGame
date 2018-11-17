@@ -2,7 +2,7 @@ package com.company;
 
 public abstract class GameObject {
     /*
-    *  ID's
+    *  Tipo
     *  Player 1 = 50
     *  Player 2 = 51
     *  Enemy 1  = 30

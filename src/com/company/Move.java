@@ -32,7 +32,7 @@ public class Move {
                     System.out.println(object.getRowPosition());
                 }
                 else{
-                    checkObject(matrix, object);
+                    check(matrix, object);
                 }
                 break;
             case 'd':
@@ -42,7 +42,7 @@ public class Move {
                     object.setRowPosition(++row);
                 }
                 else{
-                    checkObject(matrix, object);
+                    check(matrix, object);
                 }
                 break;
             case 'r':
@@ -52,7 +52,7 @@ public class Move {
                     object.setColumnPosition(++column);
                 }
                 else{
-                    checkObject(matrix, object);
+                    check(matrix, object);
                 }
                 break;
             case 'l':
@@ -62,7 +62,7 @@ public class Move {
                     object.setColumnPosition(--column);
                 }
                 else{
-                    checkObject(matrix, object);
+                    check(matrix, object);
                 }
                 break;
         }
@@ -153,7 +153,7 @@ public class Move {
         return val;
     }
 
-    private static void checkObject(int[][] matrix, GameObject object){
+    private static void check(int[][] matrix, GameObject object){
         int GOId = object.getGOId();
         if(GOId == 50 || GOId ==51) {
             System.err.println("El movimiento está fuera de rango.");
@@ -161,5 +161,9 @@ public class Move {
         if (GOId == 30 || GOId == 31 || GOId == 666){
             randomMove(matrix, object);
         }
+    }
+
+    public static void checkObject(int[][] m, GameObject p, GameObject e){
+
     }
 }

@@ -5,7 +5,6 @@ public class Random {
     // genera un numero random desde 0 a max
     public static int generarNum(int max){
         int num = 0;
-        max += 1;
         num = (int)(Math.random() * (max));
         return num;
     }
