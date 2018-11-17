@@ -75,9 +75,56 @@ public class Tablero {
     }
 
     public void combate(GameObject p1, Enemy e){
-        e.getDetails();
-    }
+        System.out.println("Te has encontrado con: ");
+        boolean exit=false;
+        while (!exit) {
+            e.getDetails();
+            System.out.println("------");
+            System.out.println("Versus");
+            System.out.println("------");
+            p1.getDetails();
+            System.out.println();
+            System.out.println("Que deseas hacer: ");
+            System.out.println("1- Atacar");
+            System.out.println("2- Escapar");
+            System.out.println();
+            int opt = Validar.entero("Ingrese una opción: ");
+            int a = 0;
+            switch (opt){
+                case 1:
+                    if (p1.getAttack() < e.getDef()) {
+                        e.setDef(e.getDef() - p1.getAttack());
+                    }
+                    else if(p1.getAttack() > e.getDef()) {
+                        a = p1.getAttack() - e.getDef();
+                        e.setDef(0);
+                        e.setLife(e.getLife() - a);
+                        if (e.getLife() <= 0) {
+                            e.setState(false);
+                            exit = true;
+                        }
+                    }
+                    System.out.println("El enemigo contraataca");
+                    if (e.getAttack() < p1.getDef()) {
+                        p1.setDef(p1.getDef() - e.getAttack());
+                    }
+                    else if(e.getAttack() > p1.getDef()) {
+                        a = e.getAttack() - p1.getDef();
+                        p1.setDef(0);
+                        p1.setLife(e.getLife() - a);
+                        if (p1.getLife() <= 0) {
+                            p1.setLife(0);
+                            p1.setState(false);
+                            exit = true;
+                        }
+                    }
+                    break;
 
+            }
+
+        }
+
+    }
 
     public static Enemy findEnemy(Enemy[] e,int r, int c){
         int index = 0;
@@ -85,7 +132,6 @@ public class Tablero {
             if(e[i].getRowPosition() == r && e[i].getColumnPosition() == c)
                 index = i;
         }
-
         return e[index];
     }
 }

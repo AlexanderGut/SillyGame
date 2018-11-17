@@ -29,7 +29,6 @@ public class Move {
                     matrix[row][column] = 0;
                     matrix[row - 1][column] = GOId;
                     object.setRowPosition(--row);
-                    System.out.println(object.getRowPosition());
                 }
                 else{
                     check(matrix, object);

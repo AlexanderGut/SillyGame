@@ -23,8 +23,8 @@ public class Enemy extends GameObject {
         System.out.println("Vida:    " + life);
         System.out.println("Ataque:  " + attack);
         System.out.println("Defensa: " + def);
-        System.out.println(rowPosition);
-        System.out.println(columnPosition);
+        System.out.println("Fila:    "+rowPosition);
+        System.out.println("Columna: " +columnPosition);
     }
 
     public static Enemy[] intstaciasEnemy(int tamañoArray){

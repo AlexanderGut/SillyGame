@@ -4,7 +4,7 @@ public class ManageGame {
 
     public void start(){
         Tablero tab = new Tablero(20,20,10);
-        Player p1 = new Player(50,Random.generarNum(tab.getROW()),Random.generarNum(tab.getCOLUMN()));
+        Player p1 = new Player(50,Random.generarNum(tab.getROW()),Random.generarNum(tab.getCOLUMN()),100,100,Random.generarNum(101));
         Enemy[] e = Enemy.intstaciasEnemy(tab.getCANTIDAD_ENEMY());
         int[][] arr = tab.initTablero(p1, e);
         int opt;
@@ -14,7 +14,7 @@ public class ManageGame {
             Tablero.showTablero(arr);
             System.out.println("-------------------------------------------");
             opt = Validar.entero("A donde quisiera mover: ");
-            System.out.println("-------------------------------------------");
+            System.out.println();
 
             switch (opt){
                 case 1:
@@ -52,6 +52,10 @@ public class ManageGame {
                 case 5:
                     exit = true;
                     break;
+            }
+            if (!p1.getState()) {
+                System.out.println("Has perdido.");
+                exit = true;
             }
         }
 

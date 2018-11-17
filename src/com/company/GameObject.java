@@ -41,6 +41,10 @@ public abstract class GameObject {
         return GOId;
     }
 
+    public boolean getState(){
+        return state;
+    }
+
     public void setRowPosition(int rowPosition) {
         this.rowPosition = rowPosition;
     }
@@ -64,4 +68,6 @@ public abstract class GameObject {
     public void setDef(int def) {
         this.def = def;
     }
+
+    public abstract void getDetails();
 }
