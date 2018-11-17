@@ -23,7 +23,8 @@ public class Enemy extends GameObject {
         System.out.println("Vida:    " + life);
         System.out.println("Ataque:  " + attack);
         System.out.println("Defensa: " + def);
-        System.out.println();
+        System.out.println(rowPosition);
+        System.out.println(columnPosition);
     }
 
     public static Enemy[] intstaciasEnemy(int tamañoArray){
@@ -36,13 +37,4 @@ public class Enemy extends GameObject {
         return EnemyList;
     }
 
-    public static Enemy findEnemy(Enemy[] e,int r, int c){
-        int index = 0;
-        for (int i = 0; i < e.length; i++) {
-            if(e[i].getRowPosition() == r && e[i].getColumnPosition() == c)
-                index = i;
-        }
-
-        return e[index];
-    }
 }

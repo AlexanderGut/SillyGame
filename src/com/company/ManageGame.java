@@ -15,6 +15,7 @@ public class ManageGame {
             System.out.println("-------------------------------------------");
             opt = Validar.entero("A donde quisiera mover: ");
             System.out.println("-------------------------------------------");
+
             switch (opt){
                 case 1:
                     int r1=p1.getRowPosition() - 1;
@@ -22,7 +23,7 @@ public class ManageGame {
                     if (arr[r1][c1] == 0)
                         Move.up(arr,p1);
                     else if (arr[r1][c1] == 30)
-                        tab.combate(p1, Enemy.findEnemy(e,r1,c1));
+                        tab.combate(p1, Tablero.findEnemy(e,r1,c1));
                     break;
                 case 2:
                     int r2 =p1.getRowPosition() + 1;
@@ -30,7 +31,7 @@ public class ManageGame {
                     if (arr[r2][c2] == 0)
                         Move.down(arr,p1);
                     else if (arr[r2][c2] == 30)
-                        tab.combate(p1, Enemy.findEnemy(e,r2,c2));
+                        tab.combate(p1, Tablero.findEnemy(e,r2,c2));
                     break;
                 case 3:
                     int r3=p1.getRowPosition();
@@ -38,7 +39,7 @@ public class ManageGame {
                     if (arr[r3][c3] == 0)
                         Move.left(arr,p1);
                     else if (arr[r3][c3] == 30)
-                        tab.combate(p1, Enemy.findEnemy(e,r3,c3));
+                        tab.combate(p1, Tablero.findEnemy(e,r3,c3));
                     break;
                 case 4:
                     int r4=p1.getRowPosition();
@@ -46,7 +47,7 @@ public class ManageGame {
                     if (arr[r4][c4] == 0)
                         Move.right(arr,p1);
                     else if (arr[r4][c4] == 30)
-                        tab.combate(p1, Enemy.findEnemy(e,r4,c4));
+                        tab.combate(p1, Tablero.findEnemy(e,r4,c4));
                     break;
                 case 5:
                     exit = true;

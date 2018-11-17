@@ -58,6 +58,9 @@ public class Tablero {
         for (int i = 0; i < CANTIDAD_ENEMY; i++) {
             int row = Random.generarNum(m[0].length);
             int column = Random.generarNum(m[1].length);
+            e[i].setRowPosition(row);
+            e[i].setColumnPosition(column);
+            //e[i].getDetails();
             while (true){
                 if (m[row][column] == 0) {
                     m[row][column] = e[i].getGOId();
@@ -73,6 +76,16 @@ public class Tablero {
 
     public void combate(GameObject p1, Enemy e){
         e.getDetails();
-        System.out.println("dsds");
+    }
+
+
+    public static Enemy findEnemy(Enemy[] e,int r, int c){
+        int index = 0;
+        for (int i = 0; i < e.length; i++) {
+            if(e[i].getRowPosition() == r && e[i].getColumnPosition() == c)
+                index = i;
+        }
+
+        return e[index];
     }
 }
